@@ -32,7 +32,7 @@ async function moveSnapshot(args) {
   const destFile = path.join(destDir, fileName);
 
   return createFolder(destDir, false)
-    .then(() => fsp.rename(fromPath, destFile))
+    .then(() => fsp.copy(fromPath, destFile))
     .then(() => null);
 }
 
